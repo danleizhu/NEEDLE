@@ -1,6 +1,4 @@
 
-# 10714-final-project
-
 ## NEEDLE: Necessary Elements for Deep Learning Library
 ## Sparse Matrix Extension for NEEDLE
 
