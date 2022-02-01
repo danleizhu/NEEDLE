@@ -1,10 +1,17 @@
+
 # 10714-final-project
 
+## NEEDLE: Necessary Elements for Deep Learning Library
 ## Sparse Matrix Extension for NEEDLE
 
-**To-do**:
+In the final project, we added the support for sparse matrices to our needle library. Specifically, the following features were implemented:
 
-- [x] need to implement sparse_transpose function to support gradient of sparse_dense_matmul (https://github.com/jerryzhou3/10714-final-project/blob/0483c927d97e834e26e032286f9bd269391a7784/python/needle/ops.py#L275)
+1) sparse matrix construction and dense conversion
 
-- [x] need to test backprop for all functions
+2) sparse matrix operations
 
+3) auto-differentiation
+
+4) support for CPU, CUDA backends
+
+Finally, we used our needle library to construct a Graph Convolutional Network and trained it on a document classification task using Cora dataset.
