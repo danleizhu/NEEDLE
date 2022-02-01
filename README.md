@@ -1,10 +1,8 @@
-# 10-714: Final Project
+# Necessary Element for Deep Learning Library
 
-by Junda An (jundaa), Yeju Zhou (yejuz), Danlei Zhu (danleizh)
 
-Link to Gdrive project folder: https://drive.google.com/drive/folders/1zfx73ihBU2nySCN5nK17Mc04wrDrAvTr?usp=sharing
-
-In the final project, we added the support for sparse matrices to our `needle` library. Specifically, the following features were implemented:
+## Support for Sparse Matrix Computation
+In addition we added the support for sparse matrices to our `needle` library. Specifically, the following features were implemented:
 
 1) sparse matrix construction and dense conversion
 
@@ -16,75 +14,6 @@ In the final project, we added the support for sparse matrices to our `needle` l
 
 Finally, we used our `needle` library to construct a Graph Convolutional Network and trained it on a document classification task using Cora dataset.
 
-
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-%cd /content/drive/MyDrive/
-!mkdir -p 10714
-%cd /content/drive/MyDrive/10714
-!git clone https://oauth2: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@github.com/jerryzhou3/10714-final-project.git
-!pip3 install pybind11
-%cd 10714-final-project
-```
-
-    Mounted at /content/drive
-    /content/drive/MyDrive
-    /content/drive/MyDrive/10714
-    fatal: destination path '10714-final-project' already exists and is not an empty directory.
-    Collecting pybind11
-      Downloading pybind11-2.8.1-py2.py3-none-any.whl (208 kB)
-    [K     |████████████████████████████████| 208 kB 8.8 MB/s 
-    [?25hInstalling collected packages: pybind11
-    Successfully installed pybind11-2.8.1
-    /content/drive/MyDrive/10714/10714-final-project
-    
-
-
-```python
-%set_env PYTHONPATH ./python
-```
-
-    env: PYTHONPATH=./python
-    
-
-
-```python
-import sys
-sys.path.append('./python')
-```
-
-
-```python
-!make
-```
-
-    -- Found pybind11: /usr/local/lib/python3.7/dist-packages/pybind11/include (found version "2.8.1" )
-    -- Found cuda, building cuda backend
-    -- Autodetected CUDA architecture(s):  6.0
-    -- Configuring done
-    -- Generating done
-    -- Build files have been written to: /content/drive/MyDrive/10714/10714-final-project/build
-    make[1]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    make[2]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    make[3]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [-25%] [34m[1mBuilding NVCC (Device) object CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o[0m
-    [35m[1mScanning dependencies of target ndarray_backend_cuda[0m
-    make[3]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    make[3]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [  0%] [32m[1mLinking CXX shared module ../python/needle/backend_ndarray/ndarray_backend_cuda.cpython-37m-x86_64-linux-gnu.so[0m
-    make[3]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [  0%] Built target ndarray_backend_cuda
-    make[3]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [35m[1mScanning dependencies of target ndarray_backend_cpu[0m
-    make[3]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    make[3]: Entering directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [ 25%] [32m[1mLinking CXX shared module ../python/needle/backend_ndarray/ndarray_backend_cpu.cpython-37m-x86_64-linux-gnu.so[0m
-    make[3]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    [ 50%] Built target ndarray_backend_cpu
-    make[2]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    make[1]: Leaving directory '/content/drive/MyDrive/10714/10714-final-project/build'
-    
 
 ## Introduction to `Sparse Matrix`
 
