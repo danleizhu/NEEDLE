@@ -106,6 +106,11 @@ Our general idea and design choices follow the PyTorch sparse APIs for both test
 The only difference between CPU backend and CUDA backend is that, before any operation, we implicitly convert the sparse matrix from the COO format to CSR format using the `get_csr` function defined in `needle/backend_ndarray/ndarray.py`. CSR format allows us to quickly find the offset of a specific value in the underlying `cached_data` handle when iterating the matrix row-wise.
 
 
+```python
+!python3 -m pytest -l -v -k "sparse"
+```
+    
+
 ## Part 4: Application to Graph Convolution Network
 
 One of the applications of the sparse matrices is on the graph neural networks. In general, only small portions of nodes in a graph are connected to each other, resulting in a sparse adjacency matrix. 
@@ -148,8 +153,7 @@ We supported both CPU and CUDA for training. Note that CUDA toke much longer tim
     epoch: 1, accuracy: 0.058714918759231904, loss: 2.643169641494751
     epoch: 2, accuracy: 0.16469719350073855, loss: 2.0339417457580566
     epoch: 3, accuracy: 0.39254062038404725, loss: 1.866609811782837
-    epoch: 4, accuracy: 0.4154357459379616, loss: 1.6810632944107056
-..................
+    epoch: 4, accuracy: 0.4154357459379616, loss: 1.6810632944107056 .....
     epoch: 98, accuracy: 0.7060561299852289, loss: 0.8860905766487122
     epoch: 99, accuracy: 0.7060561299852289, loss: 0.8847568035125732
     epoch: 100, accuracy: 0.7060561299852289, loss: 0.8834126591682434
@@ -167,8 +171,7 @@ We supported both CPU and CUDA for training. Note that CUDA toke much longer tim
     epoch: 1, accuracy: 0.08677991137370754, loss: 2.8672029972076416
     epoch: 2, accuracy: 0.15472673559822747, loss: 2.1328022480010986
     epoch: 3, accuracy: 0.3212703101920236, loss: 1.865748643875122
-    epoch: 4, accuracy: 0.4401772525849335, loss: 1.7014124393463135
-  ...................................................
+    epoch: 4, accuracy: 0.4401772525849335, loss: 1.7014124393463135.....................
     epoch: 99, accuracy: 0.7064254062038404, loss: 0.8809061050415039
     epoch: 100, accuracy: 0.7071639586410635, loss: 0.8796224594116211
     
